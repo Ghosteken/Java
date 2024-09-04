@@ -1,0 +1,56 @@
+The keyword this in Java is a reference to the current object on which a method is being called or the current object being constructed by a constructor. It is commonly used within a class to refer to the instance variables or methods of that class.
+
+The main functions of this keyword in Java are:
+
+    Referring to instance variables: Inside a class, when there is a need to refer to the current object's instance variables, the this keyword is used. It is particularly useful when there is a local variable with the same name as an instance variable. Using this differentiates the instance variable from the local variable.
+
+
+
+
+Referring to the current object: Within an instance method or constructor, the this keyword is used to refer to the current object itself. It allows you to access other methods or constructors of the same object.
+
+
+
+
+
+
+Passing the current object as an argument: The this keyword can be used to pass the current object as an argument to other methods or constructors. It is often used when you want to invoke another constructor of the same class using the current object.
+
+
+public class Person {
+    private String name;
+
+    public void setName(String name) {
+        this.name = name; // "this" refers to the instance variable "name"
+    }
+}
+
+/////////////////////////////////////////////////////////
+
+public class Person {
+    private String name;
+
+    public Person(String name) {
+        this.name = name; // "this" refers to the current object being constructed
+    }
+
+    public void sayHello() {
+        System.out.println("Hello, my name is " + this.name); // "this" refers to the current object
+    }
+}
+
+
+//////////////////////////////////////////////////////////////
+public class Person {
+    private String name;
+    private int age;
+
+    public Person(String name) {
+        this(name, 0); // Invokes the parameterized constructor of the same class
+    }
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+}

@@ -1,0 +1,3 @@
+Name: nicho
+Age: 33
+Salary: 22222.0
